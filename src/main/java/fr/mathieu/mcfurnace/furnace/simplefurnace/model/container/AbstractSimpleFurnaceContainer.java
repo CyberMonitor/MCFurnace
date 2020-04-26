@@ -26,7 +26,7 @@ public class AbstractSimpleFurnaceContainer  extends RecipeBookContainer<IInvent
     protected final World world;
     private final IRecipeType<? extends AbstractCookingRecipe> recipeType;
 
-    protected AbstractSimpleFurnaceContainer(ContainerType<?> containerTypeIn, IRecipeType<? extends AbstractCookingRecipe> recipeTypeIn, int id, PlayerInventory playerInventoryIn, IInventory furnaceInventoryIn, IIntArray p_i50104_6_) {
+    public AbstractSimpleFurnaceContainer(ContainerType<?> containerTypeIn, IRecipeType<? extends AbstractCookingRecipe> recipeTypeIn, int id, PlayerInventory playerInventoryIn, IInventory furnaceInventoryIn, IIntArray p_i50104_6_) {
         super(containerTypeIn, id);
         this.recipeType = recipeTypeIn;
         assertInventorySize(furnaceInventoryIn, 3);
@@ -53,12 +53,14 @@ public class AbstractSimpleFurnaceContainer  extends RecipeBookContainer<IInvent
         this.trackIntArray(p_i50104_6_);
     }
 
-    public void func_201771_a(RecipeItemHelper p_201771_1_) {
+    @Override
+    public void fillStackedContents(RecipeItemHelper p_201771_1_) {
         if (this.furnaceInventory instanceof IRecipeHelperPopulator) {
             ((IRecipeHelperPopulator)this.furnaceInventory).fillStackedContents(p_201771_1_);
         }
 
     }
+
 
     public void clear() {
         this.furnaceInventory.clear();

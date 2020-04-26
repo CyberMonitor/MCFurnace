@@ -7,7 +7,7 @@ import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.IIntArray;
 
-public class SimpleFurnaceContainer extends AbstractSimpleFurnaceContainer {
+public  class SimpleFurnaceContainer extends AbstractSimpleFurnaceContainer {
 
     public SimpleFurnaceContainer(int p_i50083_1_, PlayerInventory p_i50083_2_, IInventory p_i50083_3_, IIntArray p_i50083_4_) {
         super(ContainerType.FURNACE, IRecipeType.SMELTING, p_i50083_1_, p_i50083_2_, p_i50083_3_, p_i50083_4_);

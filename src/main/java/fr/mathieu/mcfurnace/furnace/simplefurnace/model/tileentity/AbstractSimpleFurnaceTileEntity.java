@@ -496,7 +496,7 @@ public abstract class AbstractSimpleFurnaceTileEntity extends LockableTileEntity
             while(p_214003_1_ > 0) {
                 int j = ExperienceOrbEntity.getXPSplit(p_214003_1_);
                 p_214003_1_ -= j;
-                p_214003_0_.world.addEntity(new ExperienceOrbEntity(p_214003_0_.world, p_214003_0_.posX, p_214003_0_.posY + 0.5D, p_214003_0_.posZ + 0.5D, j));
+                p_214003_0_.world.addEntity(new ExperienceOrbEntity(p_214003_0_.world, p_214003_0_.getPosX(), p_214003_0_.getPosY() + 0.5D, p_214003_0_.getPosZ() + 0.5D, j));
             }
 
         }

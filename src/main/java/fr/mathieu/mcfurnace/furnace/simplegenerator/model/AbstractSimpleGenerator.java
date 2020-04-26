@@ -18,9 +18,12 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IEnviromentBlockReader;
+//import net.minecraft.world.IEnviromentBlockReader;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.util.ActionResultType;
+
 
 
 public abstract class AbstractSimpleGenerator extends ContainerBlock {
@@ -46,7 +49,7 @@ public abstract class AbstractSimpleGenerator extends ContainerBlock {
     }
 
     @Override
-    public int getLightValue(BlockState state, IEnviromentBlockReader world, BlockPos pos) {
+    public int getLightValue(BlockState state, IBlockReader world, BlockPos pos) {
         return 0;
     }
 
@@ -61,14 +64,14 @@ public abstract class AbstractSimpleGenerator extends ContainerBlock {
     }
 
     @Override
-    public boolean onBlockActivated(BlockState blockState, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
+    public ActionResultType  onBlockActivated(BlockState blockState, World world, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult blockRayTraceResult) {
         TileEntity tileEntity = world.getTileEntity(blockPos);
 
         if (tileEntity instanceof AbstractSimpleGeneratorTileEntity) {
             playerEntity.openContainer((INamedContainerProvider) tileEntity);
         }
 
-        return true;
+        return ActionResultType.SUCCESS;
     }
 
     public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
