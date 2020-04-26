@@ -135,6 +135,14 @@ def reobfArtifact = artifacts.add('default', reobfFile) {
     type 'jar'
     builtBy 'reobfJar'
 }
+
+// Create Sources Jar
+task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+}
+build.dependsOn sourcesJar
+
 publishing {
     publications {
         mavenJava(MavenPublication) {

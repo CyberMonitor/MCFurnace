@@ -6,6 +6,6 @@
   "block.mcfurnace.agold_furnace": "高級金熔爐",
   "block.mcfurnace.adiamond_furnace": "高級鑽石熔爐",
 
-  "item.mcfurnace.magma_coal": "岩漿煤",
-  "item.mcfurnace.magma_charcoal" : "岩漿灰煤"
+  "item.mcfurnace.magma_coal": "岩漿炭",
+  "item.mcfurnace.magma_charcoal" : "岩漿木炭"
 }
